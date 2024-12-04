@@ -6,7 +6,15 @@ from mylib.figures import (
     plot_skill_demand_over_time,
     plot_skill_income_waterfall,
 )
+from mylib.resume_summary import get_summary, get_top_skills
 from gensim.models import Word2Vec
+
+
+# test resume summary
+def test_resume_summary():
+    summary_text = get_summary("test_resume/example_resume.pdf")
+    assert get_summary("test_resume/example_resume.pdf") is not None
+    assert get_top_skills(summary_text) is not None
 
 
 # Mock Word2Vec Model
@@ -107,6 +115,7 @@ def test_plot_function():
 
 
 if __name__ == "__main__":
+    test_resume_summary()
     test_plot_state_demand()
     test_plot_skill_demand_over_time()
     test_plot_function()
