@@ -8,8 +8,8 @@ format:
 lint:
 	pylint --disable=R,C --ignore-patterns=test_.*?py *.py
 
-# test:
-# 	python -m pytest -cov test_main.py
+test:
+	python -m pytest -cov test.py
 
 generate_and_push:
 	git config --local user.email "action@github.com"
