@@ -17,6 +17,7 @@ google #.generativeai
 
 black
 pylint
+pytest
 
 # ------------------------------------ For AWS
 
