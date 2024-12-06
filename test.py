@@ -9,6 +9,7 @@ from mylib.figures import (
 from mylib.resume_summary import get_summary, get_top_skills
 from gensim.models import Word2Vec
 
+
 # test resume summary
 def test_resume_summary():
     summary_text = get_summary("test_resume/example_resume.pdf")
