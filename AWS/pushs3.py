@@ -1,8 +1,7 @@
 import os
 import boto3
 
-# Configure your S3 bucket name and local folder path
-BUCKET_NAME = "your-bucket-name"
+BUCKET_NAME = "mady-ids706-final-proj"
 LOCAL_FOLDER = "../data"
 
 # Initialize the S3 client
