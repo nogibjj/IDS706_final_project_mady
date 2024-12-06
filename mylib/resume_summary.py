@@ -3,6 +3,7 @@ import numpy as np
 import google.generativeai as genai
 import os
 from dotenv import load_dotenv
+from google.generativeai import GenerativeModel
 
 pd.set_option("mode.copy_on_write", True)
 
