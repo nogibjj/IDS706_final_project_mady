@@ -23,7 +23,7 @@ def plot_state_demand(
     model,
     jobpostDF,
     shapefile_path="data/tl_2024_us_state.shp",
-    save_path="fig/",
+    save_path="static/fig/",
 ):
     """
     Generates and saves a state-level map visualizing the demand for the specified skills.
