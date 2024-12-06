@@ -13,7 +13,7 @@ lint:
 	pylint --disable=R,C --ignore-patterns=test_.*?py *.py
 
 test:
-	API_KEY=${API_KEY} python -m pytest -cov test.py
+	python -m pytest -cov test.py
 
 generate_and_push:
 	git config --local user.email "action@github.com"
