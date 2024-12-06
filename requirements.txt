@@ -17,4 +17,4 @@ google.generativeai
 # ------------------------------------ For AWS
 
 boto3
-awscli
+# awscli
