@@ -50,7 +50,7 @@ login:
 	docker login -u ${DOCKER_ID_USER}
 
 
-docker: 
+docker: build run clean image_show push login
 
 all: install format lint test generate_and_push
 
