@@ -23,7 +23,7 @@ def plot_state_demand(
     model,
     jobpostDF,
     shapefile_path="data/tl_2024_us_state.shp",
-    save_path="fig/",
+    save_path="static/fig/",
 ):
     """
     Generates and saves a state-level map visualizing the demand for the specified skills.
@@ -207,7 +207,7 @@ def calculate_similarity(job_skills, model, skills_of_interest_vector):
 
 # Function to generate a line plot for the demand for the set of skill over time
 def plot_skill_demand_over_time(
-    jobpostDF, skills_of_interest, model, save_path="fig/skill_demand_plot.png"
+    jobpostDF, skills_of_interest, model, save_path="static/fig/skill_demand_plot.png"
 ):
     """
     Generates a line chart showing the evolution of skill demand over time and saves it to a file.
@@ -294,7 +294,7 @@ def calculate_average_salary_for_skill(skill, jobpostDF, threshold=1000000):
 
 # Function to generate a waterfall plot for the cumulative salary contribution of each skill
 def plot_skill_income_waterfall(
-    skills_of_interest, jobpostDF, save_path="fig/skill_income_waterfall.png"
+    skills_of_interest, jobpostDF, save_path="static/fig/skill_income_waterfall.png"
 ):
     # Calculate average salary for each skill of interest
     avg_salaries = [
