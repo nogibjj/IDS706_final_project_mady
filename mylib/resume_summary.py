@@ -69,9 +69,22 @@ def get_top_skills(summary_text):
     return skill_list
 
 
+# if __name__ == "__main__":
+#     get_summary(
+#         "test_resume/example_resume.pdf"
+#     )  # need to update with a real pdf path for this to work, just have a test here to show that it works
+#     resume_summary = get_summary("test_resume/example_resume.pdf")
+#     get_top_skills(resume_summary)
+
 if __name__ == "__main__":
-    get_summary(
-        "test_resume/example_resume.pdf"
-    )  # need to update with a real pdf path for this to work, just have a test here to show that it works
-    resume_summary = get_summary("test_resume/example_resume.pdf")
-    get_top_skills(resume_summary)
+    # Default to the test resume for standalone testing
+    resume_path = "test_resume/example_resume.pdf"
+
+    try:
+        summary = get_summary(resume_path)
+        print("Resume Summary:\n", summary)
+
+        skills = get_top_skills(summary)
+        print("Top Skills:\n", skills)
+    except Exception as e:
+        print(f"Error: {e}")
