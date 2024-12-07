@@ -1,41 +1,87 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Improvement</title>
+    <title>Improvement Dashboard</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        .dashboard-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .dashboard-header h1 {
+            font-size: 2.5rem;
+            color: #333;
+        }
+        .card {
+            margin-bottom: 20px;
+            border: none;
+            border-radius: 8px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .card h2 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+        .card h6 {
+            color: #555;
+        }
+        .card img {
+            border-radius: 8px;
+        }
+    </style>
 </head>
-<body class="container mt-4">
-
-    <h1>Competision Enhancement Dashboard</h1>
-        <div class="row">
-            <!-- Recommendation from AI -->
-            <div class="col-md-6" style="background-color: lightblue;">
-                <h2>Fix the Bucket</h2>
-                <h6>We realized there are some gaps between your resume and the role</h6>
-            </div>
-
-            <!-- Similarity bar chart -->
-            <div class="col-md-6" style="background-color: burlywood;">
-                <h2>Jump to the Next Level</h2>
-                <h6>It would be even better if you can get the following done!</h6>
-                <img src="{{ url_for('static', filename='fig/skill_income_waterfall.png') }}" alt="Skill Demand Over The Country" class="img-fluid">
-            </div>
-
-            <!-- Salary Increment -->
-            <div class="col-md-6" style="background-color: lightgreen;">
-                <h2>Salary Increment</h2>
-                <h6>Your salary would increase by this much!</h6>
-                <img src="{{ url_for('static', filename='fig/skill_income_waterfall.png') }}" alt="Skill Demand Over The Country" class="img-fluid">
-            </div>
-
-            <!-- More opportunities  -->
-            <div class="col-md-6" style="background-color: khaki;">
-                <h2>Explore More Opportunities</h2>
-                <h6>You will be so population in these areas.</h6>
-            </div>
+<body>
+    <div class="container mt-4">
+        <!-- Header -->
+        <div class="dashboard-header">
+            <h1>Competition Enhancement Dashboard</h1>
+            <p>Insights and actions to help you stand out in your career journey.</p>
         </div>
 
+        <div class="row">
+            <!-- Resume Gaps Analysis -->
+            <div class="col-md-6">
+                <div class="card p-4" style="background-color: #e3f2fd;">
+                    <h2>Fix the Bucket</h2>
+                    <h6>We've identified some gaps between your resume and the role. Here’s how you can bridge them:</h6>
+                </div>
+            </div>
+
+            <!-- Similarity Bar Chart -->
+            <div class="col-md-6">
+                <div class="card p-4">
+                    <h2>Jump to the Next Level</h2>
+                    <h6>Taking the following steps will bring you closer to your dream role:</h6>
+                    <img src="{{ url_for('static', filename='fig/skill_income_waterfall.png') }}" alt="Skill Improvement Chart" class="img-fluid">
+                </div>
+            </div>
+
+            <!-- Salary Increment Potential -->
+            <div class="col-md-6">
+                <div class="card p-4" style="background-color: #d4edda;">
+                    <h2>Salary Increment</h2>
+                    <h6>Your salary could increase significantly by mastering these skills!</h6>
+                    <img src="{{ url_for('static', filename='fig/skill_income_waterfall.png') }}" alt="Salary Improvement Chart" class="img-fluid">
+                </div>
+            </div>
+
+            <!-- Additional Opportunities -->
+            <div class="col-md-6">
+                <div class="card p-4" style="background-color: #fff3cd;">
+                    <h2>Explore More Opportunities</h2>
+                    <h6>These regions and industries offer exciting possibilities for your skillset:</h6>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
