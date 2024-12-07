@@ -1,0 +1,43 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analysis</title>
+</head>
+<body class="container mt-4">
+    <h1>Resume Analysis Dashboard</h1>
+        <div class="row">
+            <!-- Resume Analysis from AI -->
+            <div class="col-md-6" style="background-color: lightblue;">
+                <h2>Your resume is solid!</h2>
+                <p>{{ summary }}</p>
+                <h2>Top Skills</h2>
+                <ul>
+                    {% for skill in top_skills %}
+                    <li>{{ skill }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+
+            <!-- Time series about demand -->
+            <div class="col-md-6" style="background-color: burlywood;">
+                <h2>Job Demand Over Time</h2>
+                <img src="{{ url_for('static', filename='fig/skill_demand_plot.png') }}" alt="Skill Demand Plot" class="img-fluid">
+            </div>
+
+            <!-- Map about demand -->
+            <div class="col-md-6" style="background-color: lightgreen;">
+                <h2>Find Your Opportunities Here!</h2>
+                <img src="{{ url_for('static', filename='fig/state_demand.png') }}" alt="Skill Demand Over The Country" class="img-fluid">
+            </div>
+
+            <!-- Expected salary  -->
+            <div class="col-md-6" style="background-color: khaki;">
+                <h2>You are about to make a FORTUNE!</h2>
+            </div>
+        </div>
+
+</body>
+</html>

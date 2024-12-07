@@ -1,11 +1,26 @@
 # Python Libraries
-numpy == 1.24.3
-pandas == 2.1.4
-geopandas == 1.0.1
-pyarrow == 18.1.0
-scikit-learn == 1.5.2
-matplotlib-base == 3.9.3
-matplotlib-inline == 0.1.7
-gensim == 4.3.1
-dotenv
-google.generativeai
+setuptools
+wheel
+numpy #== 1.24.3
+pandas #== 2.1.4
+geopandas #== 1.0.1
+pyarrow #== 18.1.0
+scikit-learn #== 1.5.2
+matplotlib
+# matplotlib-base == 3.8.0
+matplotlib-inline #== 0.1.7
+gensim #== 4.3.1
+python-dotenv
+google-generativeai
+scipy
+
+# ------------------------------------ For formatting
+
+black
+pylint
+pytest
+
+# ------------------------------------ For AWS
+
+boto3
+# awscli

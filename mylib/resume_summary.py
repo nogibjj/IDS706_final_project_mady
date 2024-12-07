@@ -3,13 +3,14 @@ import numpy as np
 import google.generativeai as genai
 import os
 from dotenv import load_dotenv
+from google.generativeai import GenerativeModel
 
 pd.set_option("mode.copy_on_write", True)
 
 
 load_dotenv()
 # Directly set your API key
-api_key = os.getenv("API_KEY")
+api_key = os.environ["API_KEY"]
 # Replace with your actual API key
 
 # Configure the API key

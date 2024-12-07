@@ -1,3 +1,8 @@
 jobpostDF.parquet
 .env
 .venv
+
+__pycache__/
+mylib/__pycache__/
+
+.DS_Store

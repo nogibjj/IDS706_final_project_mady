@@ -35,8 +35,8 @@ def test_plot_state_demand():
     mock_model = MockWord2Vec(mock_vocab)
     mock_jobpostDF = pd.read_parquet("data/jobpostDF_subset.parquet")
     shapefile_path = "data/tl_2024_us_state.shp"  # Update to your test shapefile path
-    save_path = "fig/"
-    output_file = os.path.join(save_path, f"state_demand.png")
+    save_path = "static/fig/"
+    output_file = os.path.join(save_path, "state_demand.png")
 
     # Ensure test directory exists
     os.makedirs(save_path, exist_ok=True)
@@ -69,17 +69,20 @@ def test_plot_skill_demand_over_time():
 
     # Run the function to test
     plot_skill_demand_over_time(
-        jobpostDF, skills_of_interest, model, save_path="fig/test_skill_demand_plot.png"
+        jobpostDF,
+        skills_of_interest,
+        model,
+        save_path="static/fig/test_skill_demand_plot.png",
     )
 
     # Assert that the file has been created
     assert os.path.exists(
-        "fig/test_skill_demand_plot.png"
+        "static/fig/test_skill_demand_plot.png"
     ), "Test failed! Plot not saved."
     print("Test passed! Time Plot saved successfully.")
 
     # Clean up
-    os.remove("fig/test_skill_demand_plot.png")
+    os.remove("static/fig/test_skill_demand_plot.png")
 
 
 def test_plot_function():
@@ -87,7 +90,7 @@ def test_plot_function():
     jobpostDF = pd.read_parquet("data/jobpostDF_subset.parquet")
 
     # Define path for saving the plot
-    save_path = "fig/skill_income_waterfall_test.png"
+    save_path = "static/fig/skill_income_waterfall_test.png"
 
     # Test the plot function by saving the plot
     plot_skill_income_waterfall(
@@ -96,7 +99,7 @@ def test_plot_function():
 
     # Assert that the file has been created
     assert os.path.exists(
-        "fig/skill_income_waterfall_test.png"
+        "static/fig/skill_income_waterfall_test.png"
     ), "Test failed! Plot not saved."
     print("Test passed! Skill bar Plot saved successfully.")
 
@@ -109,7 +112,7 @@ def test_plot_function():
         print("Test failed: File was not created.")
 
     # Test invalid skills scenario
-    invalid_save_path = "fig/invalid_skill_plot.png"
+    invalid_save_path = "static/fig/invalid_skill_plot.png"
     plot_skill_income_waterfall(["nonexistent_skill"], jobpostDF, invalid_save_path)
     os.remove(invalid_save_path)
 

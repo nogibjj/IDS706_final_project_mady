@@ -1,0 +1,41 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Improvement</title>
+</head>
+<body class="container mt-4">
+
+    <h1>Competision Enhancement Dashboard</h1>
+        <div class="row">
+            <!-- Recommendation from AI -->
+            <div class="col-md-6" style="background-color: lightblue;">
+                <h2>Fix the Bucket</h2>
+                <h6>We realized there are some gaps between your resume and the role</h6>
+            </div>
+
+            <!-- Similarity bar chart -->
+            <div class="col-md-6" style="background-color: burlywood;">
+                <h2>Jump to the Next Level</h2>
+                <h6>It would be even better if you can get the following done!</h6>
+                <img src="{{ url_for('static', filename='fig/skill_income_waterfall.png') }}" alt="Skill Demand Over The Country" class="img-fluid">
+            </div>
+
+            <!-- Salary Increment -->
+            <div class="col-md-6" style="background-color: lightgreen;">
+                <h2>Salary Increment</h2>
+                <h6>Your salary would increase by this much!</h6>
+                <img src="{{ url_for('static', filename='fig/skill_income_waterfall.png') }}" alt="Skill Demand Over The Country" class="img-fluid">
+            </div>
+
+            <!-- More opportunities  -->
+            <div class="col-md-6" style="background-color: khaki;">
+                <h2>Explore More Opportunities</h2>
+                <h6>You will be so population in these areas.</h6>
+            </div>
+        </div>
+
+</body>
+</html>
