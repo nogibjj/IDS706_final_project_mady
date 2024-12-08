@@ -12,7 +12,6 @@ load_dotenv()
 # Directly set your API key
 api_key = os.environ["API_KEY"]
 # Replace with your actual API key
-
 # Configure the API key
 genai.configure(api_key=api_key)
 
