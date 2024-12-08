@@ -5,7 +5,13 @@ def run_command(command):
     """Run a shell command and handle errors."""
     try:
         result = subprocess.run(
-            command, shell=True, check=True, text=True, capture_output=True
+            command,
+            shell=True,
+            check=True,
+            text=True,  # Ensures strings instead of bytes
+            encoding="utf-8",  # Specifies UTF-8 encoding
+            stdout=subprocess.PIPE,
+            stderr=subprocess.PIPE,
         )
         print(result.stdout)
     except subprocess.CalledProcessError as e:
@@ -16,6 +22,8 @@ def run_command(command):
 def push_docker_image_to_ecr(image_name, tag, repository_name, aws_account_id, region):
     """Push a Docker image to AWS ECR."""
     ecr_uri = "381492212823.dkr.ecr.us-west-2.amazonaws.com/mady_ids706_final_proj"
+    dockerfile_path = "../Dockerfile"  # Adjust this path
+    build_context = ".."  # Adjust this path
 
     # Authenticate Docker with ECR
     print("Authenticating with ECR...")
@@ -25,7 +33,9 @@ def push_docker_image_to_ecr(image_name, tag, repository_name, aws_account_id, r
 
     # Build Docker image
     print(f"Building Docker image {image_name}:{tag}...")
-    run_command(f"docker build -t {image_name}:{tag} .")
+    run_command(
+        f"docker build -t {image_name}:{tag} -f {dockerfile_path} {build_context}"
+    )
 
     # Tag Docker image
     print(f"Tagging Docker image as {ecr_uri}:{tag}...")

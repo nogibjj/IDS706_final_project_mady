@@ -1,6 +1,6 @@
 # Use the official Python image from the Docker Hub
 # FROM python:3.9-slim
-FROM --platform=linux/amd64 python:3.9-slim
+FROM python:3.9-slim
 
 # Set the working directory in the container
 # this allows for any subsequent commands to be run from this directory
@@ -30,4 +30,4 @@ ENV FLASK_APP=app.py
 
 #a more secure option would be to specify the exact IP you plan to use 
 # (e.g.API gateway interface)
-CMD ["flask", "run", "--host=0.0.0.0"]
+CMD ["flask", "run", "--host=0.0.0.0", "--port=8080"]

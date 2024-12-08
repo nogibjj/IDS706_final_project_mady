@@ -4,7 +4,8 @@ DOCKER_ID_USER = ag826
 
 install:
 	pip install --upgrade pip  &&\
-	pip install -r requirements.txt
+	pip install -r requirements.txt  &&\
+	pip install --upgrade awscli botocore
 
 format:
 	black *.py #format all files	
