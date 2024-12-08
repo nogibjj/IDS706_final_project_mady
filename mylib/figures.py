@@ -6,6 +6,9 @@ from sklearn.metrics.pairwise import cosine_similarity
 from sklearn.preprocessing import MinMaxScaler
 from gensim.models import Word2Vec
 import os
+# Yirang added below
+from mylib.resume_summary import get_summary, get_top_skills
+# Yirang added above
 
 # Load the saved model
 model = Word2Vec.load("data/skills_word2vec.model")
@@ -13,9 +16,16 @@ model = Word2Vec.load("data/skills_word2vec.model")
 # Load the Parquet file
 jobpostDF = pd.read_parquet("data/jobpostDF_subset.parquet")
 
+# Yirang commented out below
 # Define the set of skills of interest
-skills_of_interest = ["python", "sql", "machine", "learning", "analysis"]
+# skills_of_interest = ["python", "sql", "machine", "learning", "analysis"]
+# Yirang commented out above
 
+# Yirang added below
+resume_path = "test_resume/example_resume.pdf"
+summary = get_summary(resume_path)
+skills_of_interest = get_top_skills(summary)
+# Yirang added above
 
 # Function to generate a line plot for the demand for the set of skill over time
 def plot_state_demand(
