@@ -55,7 +55,7 @@ def test_plot_state_demand():
 
     # Clean up
     os.remove(output_file)
-    print("Test passed! skills_demand_map.png created successfully.")
+    print("Test passed! skills_demand_plot.png created successfully.")
 
 
 # Function to test plot_skill_demand_over_time
