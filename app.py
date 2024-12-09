@@ -1,4 +1,3 @@
-
 # START OF CODE
 
 from flask import Flask, render_template, request, redirect, url_for
@@ -6,9 +5,14 @@ import os
 from mylib.resume_summary import get_summary, get_top_skills
 import pandas as pd
 from gensim.models import Word2Vec
-from mylib.figures import plot_skill_demand_over_time, plot_state_demand, plot_skill_income_waterfall
+from mylib.figures import (
+    plot_skill_demand_over_time,
+    plot_state_demand,
+    plot_skill_income_waterfall,
+)
 import matplotlib
-matplotlib.use('Agg')
+
+matplotlib.use("Agg")
 
 app = Flask(__name__)
 
@@ -20,11 +24,16 @@ os.makedirs(PLOT_FOLDER, exist_ok=True)
 app.config["UPLOAD_FOLDER"] = UPLOAD_FOLDER
 app.config["PLOT_FOLDER"] = PLOT_FOLDER
 
+
 @app.route("/", methods=["GET", "POST"])
 def input_page():
     if request.method == "POST":
         file = request.files["file"]
-        file_path = os.path.join(app.config["UPLOAD_FOLDER"], file.filename) if file else DEFAULT_RESUME
+        file_path = (
+            os.path.join(app.config["UPLOAD_FOLDER"], file.filename)
+            if file
+            else DEFAULT_RESUME
+        )
         if file and file.filename:
             file.save(file_path)
 
@@ -34,13 +43,28 @@ def input_page():
         jobpostDF = pd.read_parquet("data/jobpostDF_subset.parquet")
         model = Word2Vec.load("data/skills_word2vec.model")
 
-        plot_skill_demand_over_time(jobpostDF, top_skills, model, os.path.join(PLOT_FOLDER, "skill_demand_plot.png"))
-        plot_state_demand(top_skills, model, jobpostDF, save_path=os.path.join(PLOT_FOLDER, "state_demand_plot.png"))
-        plot_skill_income_waterfall(top_skills, jobpostDF, save_path=os.path.join(PLOT_FOLDER, "skill_income_waterfall.png"))
+        plot_skill_demand_over_time(
+            jobpostDF,
+            top_skills,
+            model,
+            os.path.join(PLOT_FOLDER, "skill_demand_plot.png"),
+        )
+        plot_state_demand(
+            top_skills,
+            model,
+            jobpostDF,
+            save_path=os.path.join(PLOT_FOLDER, "state_demand_plot.png"),
+        )
+        plot_skill_income_waterfall(
+            top_skills,
+            jobpostDF,
+            save_path=os.path.join(PLOT_FOLDER, "skill_income_waterfall.png"),
+        )
 
         return redirect(url_for("analysis_dashboard", file_path=file_path))
 
     return render_template("Resume_Input.html")
+
 
 @app.route("/analysis", methods=["GET"])
 def analysis_dashboard():
@@ -54,13 +78,17 @@ def analysis_dashboard():
         top_skills=top_skills,
         skill_demand_plot=url_for("static", filename="fig/skill_demand_plot.png"),
         state_demand_plot=url_for("static", filename="fig/state_demand_plot.png"),
-        skill_income_waterfall=url_for("static", filename="fig/skill_income_waterfall.png"),
+        skill_income_waterfall=url_for(
+            "static", filename="fig/skill_income_waterfall.png"
+        ),
     )
+
 
 @app.route("/improvement", methods=["GET"])
 def improvement_dashboard():
     file_path = request.args.get("file_path", DEFAULT_RESUME)
     return render_template("Improvement_Dashboard.html", file_path=file_path)
+
 
 if __name__ == "__main__":
     app.run(debug=True)
