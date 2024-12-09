@@ -36,7 +36,7 @@ def test_plot_state_demand():
     mock_jobpostDF = pd.read_parquet("data/jobpostDF_subset.parquet")
     shapefile_path = "data/tl_2024_us_state.shp"  # Update to your test shapefile path
     save_path = "static/fig/"
-    output_file = os.path.join(save_path, "state_demand.png")
+    output_file = os.path.join(save_path, "state_demand_plot.png")
 
     # Ensure test directory exists
     os.makedirs(save_path, exist_ok=True)
