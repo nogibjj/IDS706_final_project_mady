@@ -38,8 +38,7 @@ def test_plot_state_demand():
     save_path = "static/fig/"
     output_file = os.path.join(save_path, "state_demand_plot.png")
 
-    # Ensure test directory exists
-    os.makedirs(save_path, exist_ok=True)
+    save_path = output_file
 
     # Run the function
     plot_state_demand(
