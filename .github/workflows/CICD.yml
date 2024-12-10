@@ -8,11 +8,11 @@ on:
 
 jobs:
   build:
-    strategy:
-      matrix: 
-        python-version: [3.11]
-        os: [windows-latest]
-    runs-on: ${{matrix.os}}
+    # strategy:
+    #   matrix: 
+    #     python-version: [3.11]
+    #     os: [windows-latest]
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
       - name: Set up Python
