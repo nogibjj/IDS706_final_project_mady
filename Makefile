@@ -30,7 +30,7 @@ build:
 
 # Run the Docker container
 run:
-	docker run -p 5000:5000 -e API_KEY=$(API_KEY) $(IMAGE_NAME)
+	docker run -d -p 5000:5000 -e API_KEY=$(API_KEY) $(IMAGE_NAME)
 
 # Remove the Docker image
 clean:
