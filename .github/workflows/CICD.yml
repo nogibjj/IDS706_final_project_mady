@@ -49,6 +49,8 @@ jobs:
       #     IMAGE_NAME: demp11
 
       - name: Build Docker image
+        env:
+            API_KEY: ${{ secrets.API_KEY }}
         run: make docker
       # - name: Build Docker image
       #   run: make build
