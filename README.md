@@ -2,7 +2,7 @@
 
 # IDS 706 - Career Catalyst
 
-Adil Gazder, Diego Rodrigues, Meron Gedrago, Yirang Liu
+Adil Gazder, Diego Rodriguez, Meron Gedrago, Yirang Liu
 
 Submitted as part of the final project for IDS 706 (Data Engineering), Fall 2024, Duke University.
 
