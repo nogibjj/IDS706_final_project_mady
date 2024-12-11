@@ -33,3 +33,4 @@ The deployed website (using AWS App Runner) can be accessed here: https://fmpg5q
 We also tested the website's performance using Locust, and were able to achieve 564 requests per second (RPS) with our deployment. This limit was attributed to the restrictions on API rate limits from Google Gemini API's and AppRunner response imitations.
 
 ![](LocustPerformance.png)
+![](Locustoutput.png)
