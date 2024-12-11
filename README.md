@@ -25,3 +25,11 @@ Languages: Python, HTML
 Infrastructure: Makefile, Docker, YAML, AWS CLI
 
 ![](Diagram.png)
+
+# Performance
+
+The deployed website (using AWS App Runner) can be accessed here: https://fmpg5qftd8.us-west-2.awsapprunner.com/
+
+We also tested the website's performance using Locust, and were able to achieve 564 requests per second (RPS) with our deployment. This limit was attributed to the restrictions on API rate limits from Google Gemini API's and AppRunner response imitations.
+
+![](LocustPerformance.png)
