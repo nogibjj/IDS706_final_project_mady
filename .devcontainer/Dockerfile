@@ -9,7 +9,8 @@ WORKDIR /app
 # Copy the current directory contents into the container at /app
 # . indicates the directory where the Dockerfile is located and copies all 
 # files in that directory into our container working directory
-COPY . /app
+COPY ../requirements.txt /app/requirements.txt
+COPY ../ /app/
 
 # Install any needed packages specified in requirements.txt
 # using --no-cache-dir to not cache the packages and save space
