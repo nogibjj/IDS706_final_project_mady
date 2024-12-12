@@ -44,6 +44,8 @@ jobs:
         uses: aws-actions/amazon-ecr-login@v1
         env:
           AWS_REGION: us-east-1
+        run: 
+          aws ecr get-login-password --region ${{ secrets.AWS_REGION }} | docker login --username AWS --password-stdin ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ secrets.AWS_REGION }}.amazonaws.com
 
       - name: Build Docker image
         env:
