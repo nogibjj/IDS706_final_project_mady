@@ -24,4 +24,5 @@ pytest
 # ------------------------------------ For AWS
 
 boto3
-# awscli
+awscli
+awscli-local
