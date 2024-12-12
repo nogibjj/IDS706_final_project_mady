@@ -6,6 +6,11 @@ Adil Gazder, Diego Rodriguez, Meron Gedrago, Yirang Liu
 
 Submitted as part of the final project for IDS 706 (Data Engineering), Fall 2024, Duke University.
 
+# Youtube Demo
+
+In this [link](https://youtu.be/ZnqeUP-ynbo) you can find a walkthrough using the application and explaining the main Data engineering features. 
+
+
 # About the Project
 
 **Overview**: This project leverages Natural Language Processing (NLP) techniques to analyze and classify job descriptions from a comprehensive dataset of over 124,000 LinkedIn job postings spanning 2023-2024. By employing document classification algorithms such as Latent Dirichlet Allocation (LDA) and pre-trained language models, we aim to identify key role-specific requirements, including skills, experience, and industry focus. The project’s ultimate goal is to provide actionable insights into the evolving demands of various roles within the U.S. labor market, highlighting trends across job titles, industries, and locations.
