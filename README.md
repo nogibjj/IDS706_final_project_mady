@@ -1,12 +1,8 @@
 [![install](https://github.com/nogibjj/IDS706_final_project_mady/actions/workflows/install.yml/badge.svg)](https://github.com/nogibjj/IDS706_final_project_mady/actions/workflows/install.yml)
-
-
 [![format](https://github.com/nogibjj/IDS706_final_project_mady/actions/workflows/format.yml/badge.svg)](https://github.com/nogibjj/IDS706_final_project_mady/actions/workflows/format.yml)
-
 [![lint](https://github.com/nogibjj/IDS706_final_project_mady/actions/workflows/lint.yml/badge.svg)](https://github.com/nogibjj/IDS706_final_project_mady/actions/workflows/lint.yml)
-
 [![test](https://github.com/nogibjj/IDS706_final_project_mady/actions/workflows/test.yml/badge.svg)](https://github.com/nogibjj/IDS706_final_project_mady/actions/workflows/test.yml)
-
+[![Py3.12.1](https://github.com/nogibjj/IDS706_final_project_mady/actions/workflows/CICD.yml/badge.svg)](https://github.com/nogibjj/IDS706_final_project_mady/actions/workflows/CICD.yml)
 
 
 # IDS 706 - Career Catalyst
