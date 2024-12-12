@@ -15,11 +15,12 @@ google-generativeai
 scipy
 flask
 
-# ------------------------------------ For formatting
+# ------------------------------------ For others
 
 black
 pylint
 pytest
+locust
 
 # ------------------------------------ For AWS
 
