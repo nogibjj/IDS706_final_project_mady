@@ -48,11 +48,15 @@ push:
 	docker tag $(IMAGE_NAME) $(DOCKER_ID_USER)/$(IMAGE_NAME)
 	docker push $(DOCKER_ID_USER)/$(IMAGE_NAME):latest
 
+pushecr:
+	docker tag ${IMAGE_NAME}:latest 381492212823.dkr.ecr.us-west-2.amazonaws.com/mady_ids706_final_proj:latest
+	docker push 381492212823.dkr.ecr.us-west-2.amazonaws.com/mady_ids706_final_proj:latest
+
 login:
 	docker login -u ${DOCKER_ID_USER}
 
 
-docker: build push
+docker: build push pushecr
 
 all: install format lint test generate_and_push
 

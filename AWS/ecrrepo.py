@@ -23,7 +23,7 @@ def push_docker_image_to_ecr(image_name, tag, repository_name, aws_account_id, r
     """Push a Docker image to AWS ECR."""
     ecr_uri = "381492212823.dkr.ecr.us-west-2.amazonaws.com/mady_ids706_final_proj"
     dockerfile_path = "../.devcontainer/Dockerfile"  # Adjust this path
-    build_context = ".."  # Adjust this path
+    build_context = "."  # Adjust this path
 
     # Authenticate Docker with ECR
     print("Authenticating with ECR...")
