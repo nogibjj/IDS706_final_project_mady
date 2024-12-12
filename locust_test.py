@@ -8,3 +8,5 @@ class WebsiteUser(HttpUser):
     @task
     def front_page(self):
         self.client.get("/")  # Test only the front page
+
+
