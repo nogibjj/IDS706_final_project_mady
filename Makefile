@@ -26,7 +26,8 @@ generate_and_push:
        
 # Build the Docker image
 build:
-	docker build -t $(IMAGE_NAME) .
+	docker build -t $(IMAGE_NAME) -f .devcontainer/Dockerfile .
+
 
 # Run the Docker container
 run:

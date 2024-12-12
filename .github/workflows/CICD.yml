@@ -1,4 +1,4 @@
-name: CICD
+name: Py3.12.1
 on:
   push:
     branches: ["main"]
@@ -24,8 +24,6 @@ jobs:
         run: make test
       - name: generate
         run: make generate_and_push
-
-
 
 
       - name: Log in to Docker Hub
