@@ -33,9 +33,13 @@ Infrastructure: Makefile, Docker, YAML, AWS CLI
 
 # Performance
 
-The deployed website (using AWS App Runner) can be accessed here: https://fmpg5qftd8.us-west-2.awsapprunner.com/
+The deployed website (using AWS App Runner) can be accessed here: https://jdwhnfkggk.us-west-2.awsapprunner.com/
 
 We also tested the website's performance using Locust, and were able to achieve 564 requests per second (RPS) with our deployment. This limit was attributed to the restrictions on API rate limits from Google Gemini API's and AppRunner response imitations.
 
 ![](LocustPerformance.png)
 ![](Locustoutput.png)
+
+# Limitations and Areas of Improvement
+
+Since there are multiple Language models running along with API calls (Google Gemini)there are instances where the load time maybe more than normal as the document size increases. Additionally, considering we are using an AWS resource, on occasion the memory capacity may be consumed rapidly.

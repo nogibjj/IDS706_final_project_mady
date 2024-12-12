@@ -1,4 +1,4 @@
-name: CICD
+name: test
 on:
   push:
     branches: ["main"]
@@ -14,5 +14,7 @@ jobs:
       - name: install packages
         run: make install
       - name: test
+        env:
+            API_KEY: ${{ secrets.API_KEY }}
         run: make test
  

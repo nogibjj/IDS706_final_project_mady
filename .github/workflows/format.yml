@@ -1,4 +1,4 @@
-name: CICD
+name: format
 on:
   push:
     branches: ["main"]

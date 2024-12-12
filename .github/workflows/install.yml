@@ -1,4 +1,4 @@
-name: CICD
+name: install
 on:
   push:
     branches: ["main"]
